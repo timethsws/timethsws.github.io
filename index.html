@@ -22,8 +22,7 @@
         <h3 class="t-subtitle" id="subtitle"></h3>
     </div>
     <script>
-        var title = "Hi, I'm Timeth Subasinghe";
-        var subtitle = "Welcom to my Website!"
+        var title = "Hi, I'm Timeth ";
         var speed = 50;
 
 
@@ -45,8 +44,6 @@
         async function page() {
             var res = await sleep(500)
             await typeWriter(title, "title")
-            res = await sleep(250)
-            await typeWriter(subtitle, "subtitle");
         }
         page();
     </script>
