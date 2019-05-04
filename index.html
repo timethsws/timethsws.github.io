@@ -39,22 +39,15 @@
                 document.getElementById(elementid).innerHTML += text.charAt(i);
                 var res = await sleep(speed);
             }
-            var res = await sleep(200);
         }
 
-        // function write(text, elementId) {
-        //     var element = document.getElementById(elementid)
-        //     for (var i = 0; i < text.length; i++) {
-        //         element.innerHTML += text.charAt(i);
-
-        //     }
-        // }
-        typeWriter(title, "title").then(res => {
-
-            typeWriter(subtitle, "subtitle");
-        })
-
-
+        async function page() {
+            var res = await sleep(500)
+            await typeWriter(title, "title")
+            res = await sleep(250)
+            await typeWriter(subtitle, "subtitle");
+        }
+        page();
     </script>
 </body>
 <html>
