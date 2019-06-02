@@ -6,11 +6,23 @@ body
     font-family: 'Titillium Web', sans-serif;
     color: #eeeeee;
 }
-.t-title{
-    padding-top: 10%;
-    padding-left: 2%;
+.content{
+    margin-top: 5%;
+    margin-left: 2%;
+}
+.title{
+    font-size: 2.5em;
+    height: 30px;
+    margin-bottom: 1em;
+}
+.btn{
+    color: #eeeeee;
+    background-color: #11111100;
+    border-style: solid;
+    border-color: #eeeeee
 }
 
-.t-subtitle{
-    padding-left: 2%;
+.btn:hover {
+    color: #eeeeee;
+    background-color: #eeeeee22;
 }

@@ -18,12 +18,20 @@
 
 <body>
     <div class="container-fluid">
-        <h1 class="t-title" id="title"></h1>
-        <h3 class="t-subtitle" id="subtitle"></h3>
+        <div class="content">
+            <p class="title" id="title"></p>
+            <button class="btn"> About me</button>
+        </div>
     </div>
     <script>
-        var title = "Hi, I'm Timeth ";
-        var speed = 50;
+        var title = [
+            "Hi, I'm Timeth",
+            "I'm a Software Engineer",
+            "I'm From Colombo Sri Lanka",
+            "Welcome to my Website"
+        ];
+        var speedMax = 100;
+        var speedMin = 50;
 
 
         function sleep(timeout) {
@@ -34,16 +42,36 @@
             });
         }
 
-        async function typeWriter(text, elementid) {
+        async function typeWriterWrite(text, elementid) {
             for (var i = 0; i < text.length; i++) {
                 document.getElementById(elementid).innerHTML += text.charAt(i);
-                var res = await sleep(speed);
+                var rand = Math.floor(Math.random() * (speedMax - speedMin)) + speedMin;
+                var res = await sleep(rand);
             }
+            var tw = await sleep(1000);
+
+        }
+
+        async function typeWriterDelete(element) {
+            text = document.getElementById(element).innerHTML;
+            for (var i = 0; i < text.length; i++) {
+                document.getElementById(element).innerHTML = text.substring(0, text.length - i);
+                var rand = Math.floor(Math.random() * (speedMax - speedMin)) + speedMin;
+                var res = await sleep(rand);
+            }
+            document.getElementById(element).innerHTML = "";
+
+            var res = await sleep(500);
         }
 
         async function page() {
             var res = await sleep(500)
-            await typeWriter(title, "title")
+            for (var t = 0; t < title.length; t++) {
+                await typeWriterWrite(title[t], "title")
+                if (t != title.length - 1) {
+                    await typeWriterDelete("title")
+                }
+            }
         }
         page();
     </script>
