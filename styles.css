@@ -23,6 +23,7 @@ body
     border-style: solid;
     border-color: #eeeeee;
     width:100px;
+    transition: bottom 1s
 }
 
 .btn:hover {
