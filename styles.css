@@ -9,6 +9,8 @@ body
 .content{
     margin-top: 5%;
     margin-left: 2%;
+    display: flex;
+    flex-direction: column;
 }
 .title{
     font-size: 2.5em;
@@ -19,10 +21,23 @@ body
     color: #eeeeee;
     background-color: #11111100;
     border-style: solid;
-    border-color: #eeeeee
+    border-color: #eeeeee;
+    width:100px;
 }
 
 .btn:hover {
     color: #eeeeee;
     background-color: #eeeeee22;
+}
+@media screen and (max-width: 454px) {
+    .content{
+        width: 100%;
+    }
+
+    .title{
+        height: 75px;
+    }
+    .btn{
+        align-self: center;
+    }
 }

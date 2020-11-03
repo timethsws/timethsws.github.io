@@ -20,7 +20,7 @@
     <div class="container-fluid" style="display: flex; height: 90%; align-items: center;">
         <div class="content">
             <p class="title" id="title"></p>
-            <button class="btn"> About me</button>
+            <button id='btnAboutMe' class="btn" > About me </button>
         </div>
     </div>
     <script>
@@ -65,6 +65,7 @@
         }
 
         async function page() {
+            // document.getElementById("btnAboutMe").style.display = "none";
             var res = await sleep(500)
             for (var t = 0; t < title.length; t++) {
                 await typeWriterWrite(title[t], "title")
@@ -72,7 +73,9 @@
                     await typeWriterDelete("title")
                 }
             }
+            // document.getElementById("btnAboutMe").style.display = "block";
         }
+        
         page();
     </script>
 </body>
